@@ -10,59 +10,39 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-
-import java.util.Random;
-import android.app.AlertDialog;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.os.Message;
 
-public class NumPang extends Fragment {
-    public static NumPang newInstance(int start){
-        NumPang cf = new NumPang();
+import java.util.Random;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
+public class NumPangFrag extends Fragment {
+    public static NumPangFrag newInstance(int start){
+        NumPangFrag np = new NumPangFrag();
         Bundle args = new Bundle();
         args.putInt("start",start);
-        cf.setArguments(args);
-        return cf;
+        np.setArguments(args);
+        return np;
     }
 
+    @Nullable
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater, container, savedInstanceState);
-        View root = inflater.inflate(R.layout.numpangview, container, false);
-        Button btnIncrease = (Button)root.findViewById(R.id.btnincrease);
-        final TextView textCounter = (TextView)root.findViewById(R.id.txtcounter);
-
-        int start = 0;
-        Bundle args = getArguments();
-        if(args != null){
-            start = args.getInt("start");
-        }
-        textCounter.setText(Integer.toString(start));
-
-        if(savedInstanceState != null) {
-            textCounter.setText(Integer.toString(savedInstanceState.getInt("counter")));
-        }
-
-        btnIncrease.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int count = Integer.parseInt(textCounter.getText().toString());
-                textCounter.setText(Integer.toString(count + 1));
-            }
-        });
+        View root = inflater.inflate(R.layout.numpangfrag, container, false);
         return root;
     }
 
