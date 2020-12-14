@@ -1,6 +1,7 @@
 package com.example.numpang;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Canvas;
@@ -30,13 +31,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 public class NumPangFrag extends Fragment {
-    public static NumPangFrag newInstance(int start){
-        NumPangFrag np = new NumPangFrag();
-        Bundle args = new Bundle();
-        args.putInt("start",start);
-        np.setArguments(args);
-        return np;
-    }
 
     @Nullable
     @Override

@@ -8,27 +8,30 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btnStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_weight="1"
+            android:onClick="mOnClick"
             android:text="@string/startButton" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnPause"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_weight="1"
+            android:onClick="mOnClick"
             android:text="@string/pauseButton" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btnOthers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:layout_weight="1"
+            android:onClick="mOnClick"
             android:text="@string/otherButton" />
     </LinearLayout>
 
@@ -37,8 +40,8 @@
         android:layout_height="match_parent">
 
         <fragment
+            android:id="@+id/numpangfrag"
             android:name="com.example.numpang.NumPangFrag"
-            android:id="@+id/numPangFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>
